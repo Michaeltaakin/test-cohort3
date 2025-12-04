@@ -1,1 +1,41 @@
 what is happeing?
+variable "region" {
+  description = "AWS region to deploy into"
+  type        = string
+  default     = "us-east-2"
+}
+
+variable "vpc_cidr" {
+  description = "CIDR for the VPC"
+  type        = string
+  default     = "10.10.0.0/16"
+}
+
+variable "public_subnet_cidrs" {
+  description = "List of public subnet CIDRs"
+  type        = list(string)
+  default     = ["10.10.1.0/24", "10.10.2.0/24"]
+}
+
+variable "instance_count" {
+  description = "Number of EC2 instances to create"
+  type        = number
+  default     = 2
+}
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  default     = "t2.micro"
+}
+
+variable "key_name" {
+  description = "michael-key"
+  type        = string
+}
+
+variable "ami_owner" {
+  description = "Amazon Linux 2 AMI"
+  type        = string
+  default     = "ami-0199d4b5b8b4fde0e"
+}
+
